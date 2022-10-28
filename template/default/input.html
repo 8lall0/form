@@ -1,0 +1,4 @@
+<div>
+<label for="{{.Id}}">{{.Label}}</label><br>
+<input {{with .Id}}id="{{.}}"{{end}} type="{{.Type}}" name="{{.Name}}" placeholder="{{.Placeholder}}" {{with .Value}}value="{{.}}"{{end}}>
+</div>

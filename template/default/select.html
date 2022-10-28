@@ -1,0 +1,8 @@
+<div>
+<label for="{{.Id}}">{{.Label}}</label><br>
+<select {{with .Id}}id="{{.}}"{{end}}>
+    {{ range .Options }}
+    <option {{if .Selected}}selected{{end}} value="{{.Value}}">{{.Label}}</option>
+    {{ end }}
+</select>
+</div>

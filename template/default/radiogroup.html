@@ -1,0 +1,9 @@
+
+{{$GroupName:=.Name}}
+<div>
+<p style="margin: 0;">{{.Label}}</p>
+{{ range .Values}}
+<input {{with .Id}}id="{{.}}"{{end}} type="radio" name="{{$GroupName}}" {{with .Value}}value="{{.}}"{{end}}>
+{{if .Label}}<label {{with .Id}}for="{{.}}"{{end}}>{{.Label}}</label>{{end}}
+{{end}}
+</div>

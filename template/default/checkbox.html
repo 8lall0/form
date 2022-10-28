@@ -1,0 +1,4 @@
+<div>
+<input {{with .Id}}id="{{.}}"{{end}} type="checkbox" name="{{.Name}}" {{with .Value}}value="{{.}}"{{end}}>
+<label {{with .Id}}for="{{.}}"{{end}}>{{.Label}}</label>
+</div>
