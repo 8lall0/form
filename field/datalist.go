@@ -16,7 +16,7 @@ type DataList struct {
 }
 
 func (d *DataList) Render(tplPath string, w io.Writer) error {
-	if err := render(d, tplPath+"datalist.html", w); err != nil {
+	if err := render(d, tplPath+tplDatalist, w); err != nil {
 		return err
 	}
 	return nil

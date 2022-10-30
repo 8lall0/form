@@ -8,6 +8,10 @@ import (
 	"github.com/8lall0/form/field"
 )
 
+const (
+	tplForm = "form.html"
+)
+
 type Form struct {
 	Action       string
 	Method       string
@@ -19,14 +23,14 @@ type Form struct {
 
 func (f *Form) Render(w io.Writer) error {
 	var fieldTpl bytes.Buffer
-	for _, field := range f.Fields {
-		err := field.Render(f.TemplatePath, &fieldTpl)
+	for _, el := range f.Fields {
+		err := el.Render(f.TemplatePath, &fieldTpl)
 		if err != nil {
 			return err
 		}
 	}
 
-	tpl, err := template.ParseFiles(f.TemplatePath + "form.html")
+	tpl, err := template.ParseFiles(f.TemplatePath + tplForm)
 	if err != nil {
 		return err
 	}

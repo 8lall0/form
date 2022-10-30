@@ -11,7 +11,7 @@ type Checkbox struct {
 }
 
 func (c *Checkbox) Render(tplPath string, w io.Writer) error {
-	if err := render(c, tplPath+"checkbox.html", w); err != nil {
+	if err := render(c, tplPath+tplCheckbox, w); err != nil {
 		return err
 	}
 	return nil

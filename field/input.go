@@ -24,8 +24,7 @@ type Input struct {
 }
 
 func (i *Input) Render(tplPath string, w io.Writer) error {
-	// Qui puoi controllare i valori
-	if err := render(i, tplPath+"input.html", w); err != nil {
+	if err := render(i, tplPath+tplInput, w); err != nil {
 		return err
 	}
 

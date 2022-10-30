@@ -17,7 +17,7 @@ type RadioGroup struct {
 }
 
 func (r *RadioGroup) Render(tplPath string, w io.Writer) error {
-	if err := render(r, tplPath+"radiogroup.html", w); err != nil {
+	if err := render(r, tplPath+tplRadioGroup, w); err != nil {
 		return err
 	}
 	return nil

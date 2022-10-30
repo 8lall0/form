@@ -11,7 +11,7 @@ type Button struct {
 }
 
 func (b *Button) Render(tplPath string, w io.Writer) error {
-	if err := render(b, tplPath+"button.html", w); err != nil {
+	if err := render(b, tplPath+tplButton, w); err != nil {
 		return err
 	}
 	return nil

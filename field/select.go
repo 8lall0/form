@@ -19,7 +19,7 @@ type Select struct {
 }
 
 func (s *Select) Render(tplPath string, w io.Writer) error {
-	if err := render(s, tplPath+"select.html", w); err != nil {
+	if err := render(s, tplPath+tplSelect, w); err != nil {
 		return err
 	}
 	return nil

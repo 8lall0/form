@@ -14,7 +14,7 @@ type TextArea struct {
 }
 
 func (t *TextArea) Render(tplPath string, w io.Writer) error {
-	if err := render(t, tplPath+"textarea.html", w); err != nil {
+	if err := render(t, tplPath+tplTextarea, w); err != nil {
 		return err
 	}
 	return nil
