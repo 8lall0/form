@@ -1,6 +1,11 @@
 <div>
 <label for="{{.Id}}">{{.Label}}</label><br>
-<select {{with .Id}}id="{{.}}"{{end}}>
+<select
+        {{with .Id}}id="{{.}}"{{end}}
+        {{with .Name}}name="{{.}}"{{end}}
+        {{with .Size}}size="{{.}}"{{end}}
+        {{if .Required}}required{{end}}
+        {{if .Multiple}}multiple{{end}}>
     {{ range .Options }}
     <option {{if .Selected}}selected{{end}} value="{{.Value}}">{{.Label}}</option>
     {{ end }}
