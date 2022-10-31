@@ -8,11 +8,11 @@ type DataList struct {
 	Id       string
 	Name     string
 	Label    string
+	Type     string
 	Required bool
 	Size     int
 	Multiple bool
 	Options  []string
-	Validate func() bool
 }
 
 func (d *DataList) Render(tplPath string, w io.Writer) error {

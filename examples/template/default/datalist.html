@@ -1,6 +1,6 @@
 <div>
 <label for="{{.Id}}">{{.Label}}</label><br>
-<input {{with .Id}}list="{{.}}"{{end}}>
+<input {{if .Required}}required{{end}} {{with .Type}}type="{{.}}"{{end}} {{with .Id}}list="{{.}}"{{end}}>
 <datalist {{with .Id}}id="{{.}}"{{end}}>
     {{ range $value := .Options }}
     <option value="{{$value}}"></option>
