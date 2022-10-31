@@ -50,9 +50,10 @@ func main() {
 		Label: "value two",
 	}
 	rGroup := &field.RadioGroup{
-		Name:   "radiogroup",
-		Label:  "Radiogroup Field",
-		Values: []field.RadioValue{val1, val2},
+		Name:     "radiogroup",
+		Label:    "Radiogroup Field",
+		Required: true,
+		Values:   []field.RadioValue{val1, val2},
 	}
 	check := &field.Checkbox{
 		Name:     "checkbox",

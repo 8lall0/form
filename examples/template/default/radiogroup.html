@@ -1,9 +1,17 @@
-
 {{$GroupName:=.Name}}
+{{$IsRequired:=.Required}}
 <div>
-<p style="margin: 0;">{{.Label}}</p>
-{{ range .Values}}
-<input {{with .Id}}id="{{.}}"{{end}} type="radio" name="{{$GroupName}}" {{with .Value}}value="{{.}}"{{end}}>
-{{if .Label}}<label {{with .Id}}for="{{.}}"{{end}}>{{.Label}}</label>{{end}}
-{{end}}
+    <p style="margin: 0;">{{.Label}}</p>
+    {{ range $i, $v := .Values}}
+        <input {{with $v.Id}}id="{{.}}"{{end}}
+               type="radio"
+                {{if eq $i 0}}
+                    {{if $IsRequired}}
+                        required
+                    {{end}}
+                {{end}}
+               name="{{$GroupName}}"
+                {{with $v.Value}}value="{{.}}"{{end}}>
+        {{if $v.Label}}<label {{with $v.Id}}for="{{.}}"{{end}}>{{$v.Label}}</label>{{end}}
+    {{end}}
 </div>
