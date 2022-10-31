@@ -1,4 +1,14 @@
 <div>
 <label for="{{.Id}}">{{.Label}}</label><br>
-<textarea {{with .Id}}id="{{.}}"{{end}} name="{{.Name}}" placeholder="{{.Placeholder}}" {{with .Value}}value="{{.}}"{{end}}></textarea>
+<textarea
+        {{with .Id}}id="{{.}}"{{end}}
+        name="{{.Name}}"
+        placeholder="{{.Placeholder}}"
+        {{with .MaxLength}}maxlength="{{.}}"{{end}}
+        {{if .Required}}required{{end}}
+        {{if .ReadOnly}}readonly{{end}}
+        {{if .AutoFocus}}autofocus{{end}}
+        {{if .Disabled}}disabled{{end}}
+        autocomplete="{{if .AutoComplete}}on{{else}}off{{end}}"
+        {{with .Value}}value="{{.}}"{{end}}></textarea>
 </div>
