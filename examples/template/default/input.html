@@ -1,4 +1,17 @@
 <div>
-<label for="{{.Id}}">{{.Label}}</label><br>
-<input {{with .Id}}id="{{.}}"{{end}} type="{{.Type}}" name="{{.Name}}" placeholder="{{.Placeholder}}" {{with .Value}}value="{{.}}"{{end}}>
+    <label for="{{.Id}}">{{.Label}}</label><br>
+    <input {{with .Id}}id="{{.}}"{{end}}
+           type="{{.Type}}"
+           name="{{.Name}}"
+           placeholder="{{.Placeholder}}"
+            {{if .ReadOnly}}readonly{{end}}
+            {{if .Disabled}}disabled{{end}}
+            {{with .MaxLength}}maxlength="{{.}}"{{end}}
+            {{with .Size}}size="{{.}}"{{end}}
+            {{with .Min}}min="{{.}}"{{end}}
+            {{with .Max}}max="{{.}}"{{end}}
+            {{with .Pattern}}pattern="{{.}}"{{end}}
+            {{if .AutoFocus}}autofocus{{end}}
+            autocomplete="{{if .Autocomplete}}on{{else}}off{{end}}"
+            {{with .Value}}value="{{.}}"{{end}}>
 </div>
